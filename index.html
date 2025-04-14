@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Générateur Magique Cosmique</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="container">
+    <h1>✨ Générateur Magique Cosmique ✨</h1>
+    <p class="subtitle">Pour découvrir ce que tu savais déjà sans le savoir</p>
+
+    <nav>
+      <button onclick="loadApp('oracle')">🔮 Oracle Extra Totale</button>
+      <button onclick="loadApp('dragon')">🐉 Forge de noms de dragon</button>
+      <button onclick="loadApp('goblin')">👹 Générateur de noms de gobelins</button>
+      <button onclick="loadApp('fortune')">🌌 Fortune cosmique</button>
+      <button onclick="loadApp('caher')">📝 Générateur de sens</button>
+    </nav>
+
+    <div id="app-container">
+      <p>Choisis une des portes magiques ci-dessus pour commencer.</p>
+    </div>
+  </div>
+
+  <script>
+    function loadApp(app) {
+      const script = document.createElement("script");
+      script.src = app + ".js";
+      script.onload = () => console.log(app + " chargé.");
+      document.getElementById("app-container").innerHTML = "";
+      document.body.appendChild(script);
+    }
+  </script>
+</body>
+</html>
